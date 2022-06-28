@@ -7,9 +7,9 @@ import {fetchKakapo} from '../actions'
 import Kakapo from './Kakapo'
 
 function App () {
-  // Hmm. unclear how to describe exaclty what is happening here with useSelector
+  // Display the redux state
   const kakapo=useSelector((state) => state.kakapo)
-  // need to define dispatch
+  // need to define dispatch - dispatch the thunk when page loaders
   const dispatch = useDispatch()
 
   // useEffect so we only render list of Kakapo once
