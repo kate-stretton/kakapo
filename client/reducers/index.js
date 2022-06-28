@@ -1,7 +1,11 @@
 import { combineReducers } from 'redux'
 
-// import stuff from './stuff'
+import errorMessage from './errorMessage'
+import kakapo from './kakapo'
+import waiting from './waiting'
 
 export default combineReducers({
-  // stuff
+  errorMessage,
+  kakapo,
+  waiting,
 })

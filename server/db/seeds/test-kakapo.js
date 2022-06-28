@@ -1,3 +1,5 @@
+// add kakapo data to database
+
 exports.seed = async function (knex) {
   // Deletes ALL existing entries
   await knex('kakapo').del()

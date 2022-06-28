@@ -1,3 +1,5 @@
+// table for kakapo data
+
 exports.up = function (knex) {
   return knex.schema.createTable('kakapo', (table) => {
     table.increments('id')
