@@ -10,10 +10,12 @@ export function getKakapo() {
 }
 
 export function postKakapo(kakapo) {
+  //console.log('api:', kakapo)
   return request
     .post(rootUrl + '/kakapo')
-    .send({ kakapo })
+    .send(kakapo) //had to remove curly brackets
     .then((res) => {
+      //console.log(res.body)
       return res.body
     })
 }
