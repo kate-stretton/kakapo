@@ -32,7 +32,7 @@ export function addKakapo(kakapo) {
 }
 
 export function saveKakapo(kakapo) {
-  console.log('actions:', kakapo)
+  //console.log('actions:', kakapo)
   return (dispatch) => {
     return postKakapo(kakapo)
       .then((newKakapo) => {
