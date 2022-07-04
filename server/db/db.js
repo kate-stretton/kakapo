@@ -19,4 +19,8 @@ function addKakapo(kakapo, db = connection) {
     })
 }
 
-module.exports = { getKakapo, addKakapo, getAKakapo }
+function deleteKakapo(id, db = connection) {
+  return db('kakapo').where('id', id).delete()
+}
+
+module.exports = { getKakapo, addKakapo, getAKakapo, deleteKakapo }

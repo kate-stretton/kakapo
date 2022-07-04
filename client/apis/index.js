@@ -19,3 +19,7 @@ export function postKakapo(kakapo) {
       return res.body
     })
 }
+
+export function farewellKakapo(id) {
+  return request.delete(rootUrl + '/kakapo/' + id)
+}
