@@ -17,7 +17,7 @@ function Kakapo ({id, name, year}) {
     <>
     <ul>
       <li>
-        {id}, {name}, {year} <UpdateKakapo/> <button onClick={handleDelete}>Delete</button>
+        {id}, {name}, {year} <UpdateKakapo id={id} name={name} hatchYear={year}/> <button onClick={handleDelete}>Delete</button>
       </li>
     </ul>
     </>
