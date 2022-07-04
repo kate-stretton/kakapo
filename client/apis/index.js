@@ -8,3 +8,12 @@ export function getKakapo() {
     return res.body
   })
 }
+
+export function postKakapo(kakapo) {
+  return request
+    .post(rootUrl + '/kakapo')
+    .send({ kakapo })
+    .then((res) => {
+      return res.body
+    })
+}

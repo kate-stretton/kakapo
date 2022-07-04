@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 
 import {fetchKakapo} from '../actions'
-
+import AddKakapo from './AddKakapo'
 import Kakapo from './Kakapo'
 
 function App () {
@@ -27,7 +27,8 @@ function App () {
       {/* map through all kakapo in the data base and send info for each to Kakapo component as props */}
       {kakapo.map((k) => (
         <Kakapo key={k.id} id={k.id} name={k.name} year={k.hatchYear}/>
-        ))}     
+        ))}   
+        <AddKakapo/>  
       </section>
     </>
   )
