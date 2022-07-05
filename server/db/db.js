@@ -23,4 +23,16 @@ function deleteKakapo(id, db = connection) {
   return db('kakapo').where('id', id).delete()
 }
 
-module.exports = { getKakapo, addKakapo, getAKakapo, deleteKakapo }
+function updateKakapo(id, newName, db = connection) {
+  return db('kakapo').where({ id }).update({
+    name: newName,
+  })
+}
+
+module.exports = {
+  getKakapo,
+  addKakapo,
+  getAKakapo,
+  deleteKakapo,
+  updateKakapo,
+}

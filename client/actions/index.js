@@ -1,9 +1,10 @@
-import { getKakapo, postKakapo, farewellKakapo } from '../apis/index'
+import { getKakapo, postKakapo, farewellKakapo, newKakapo } from '../apis/index'
 
 //largely for the purpose of avoiding typos
 export const SET_KAKAPO = 'SET_KAKAPO'
 export const ADD_KAKAPO = 'ADD_KAKAPO'
 export const DELETE_KAKAPO = 'DELETE_KAKAPO'
+export const UPDATE_KAKAPO = 'UPDATE_KAKAPO'
 
 export function fetchKakapo() {
   return (dispatch) => {
@@ -58,6 +59,29 @@ export function removeKakapo(id) {
     return farewellKakapo(id)
       .then(() => {
         dispatch(deleteKakapo(id))
+        return null
+      })
+      .catch((err) => {
+        console.log(err.message)
+      })
+  }
+}
+
+function updateKakapo(oldName, newName) {
+  return {
+    type: UPDATE_KAKAPO,
+    payload: {
+      oldName: oldName,
+      newName: newName,
+    },
+  }
+}
+
+export function newNameKakapo(oldName, newName) {
+  return (dispatch) => {
+    return newKakapo(oldName, newName)
+      .then(() => {
+        dispatch(updateKakapo(oldName, newName))
         return null
       })
       .catch((err) => {

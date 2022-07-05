@@ -40,4 +40,18 @@ router.delete('/:id', (req, res) => {
     })
 })
 
+router.patch('/:id/', (req, res) => {
+  return db
+    .updateKakapo(req.params.id, req.body.name)
+    .then(() => {
+      return db.getAKakapo(req.params.id)
+    })
+    .then((kakapo) => {
+      res.json(kakapo)
+    })
+    .catch((err) => {
+      res.status(500).send(err.message)
+    })
+})
+
 module.exports = router

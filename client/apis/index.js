@@ -23,3 +23,8 @@ export function postKakapo(kakapo) {
 export function farewellKakapo(id) {
   return request.delete(rootUrl + '/kakapo/' + id)
 }
+
+// sort this out
+export function newKakapo(id) {
+  return request.update(rootUrl + '/kakapo/' + id)
+}
