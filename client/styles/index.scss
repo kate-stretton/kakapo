@@ -1,10 +1,31 @@
-body {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 0;
-  padding: 20px;
-  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+// body {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   margin: 0;
+//   padding: 20px;
+//   font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+// }
+
+header{
+  background-color: rgb(95, 176, 95);
+  text-align: center;
+  padding: 30px;
+  font-size: 20px;
+  margin-bottom: 40px;
 }
 
+footer{
+  margin-top: 40px;
+  background-color: rgb(95, 176, 95);
+  text-align: center;
+  padding: 30px;
+  font-size: 20px;
+}
 
+.kakapo{
+  background-color: white;
+  border-radius: 5px;
+  margin: 5px;
+  text-align: center;
+}

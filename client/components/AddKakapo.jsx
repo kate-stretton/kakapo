@@ -26,13 +26,16 @@ function AddKakapo () {
   }
 
   return (
-  <form onSubmit={handleSubmit}>
-    <label htmlFor='name'>Name: </label>  
-    <input type='text' id ='name' name='name' value={newKakapo.name} onChange={handleChange} />
-    <label htmlFor='hatchYear'>Hatch year: </label>     
-    <input type='number' id='hatchYear' name='hatchYear' value={newKakapo.hatchYear} onChange={handleChange} />
-    <button type='submit'>Save</button>
-  </form>
+    <>
+    <h3>Add a new Kākāpō</h3>
+    <form onSubmit={handleSubmit}>
+      <label htmlFor='name'>Name: </label>  
+      <input type='text' id ='name' name='name' value={newKakapo.name} onChange={handleChange} />
+      <label htmlFor='hatchYear'>Hatch year: </label>     
+      <input type='number' id='hatchYear' name='hatchYear' value={newKakapo.hatchYear} onChange={handleChange} />
+      <button type='submit'>Save</button>
+    </form>
+  </>
   )
 }
 

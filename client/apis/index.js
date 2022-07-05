@@ -25,6 +25,6 @@ export function farewellKakapo(id) {
 }
 
 // sort this out
-export function newKakapo(id) {
-  return request.update(rootUrl + '/kakapo/' + id)
+export function newKakapo(id, newName) {
+  return request.patch(rootUrl + '/kakapo/' + id).send(newName)
 }

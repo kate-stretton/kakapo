@@ -67,21 +67,21 @@ export function removeKakapo(id) {
   }
 }
 
-function updateKakapo(oldName, newName) {
+function updateKakapo(id, newName) {
   return {
     type: UPDATE_KAKAPO,
     payload: {
-      oldName: oldName,
+      id: id,
       newName: newName,
     },
   }
 }
 
-export function newNameKakapo(oldName, newName) {
+export function newNameKakapo(id, newName) {
   return (dispatch) => {
-    return newKakapo(oldName, newName)
+    return newKakapo(id, newName)
       .then(() => {
-        dispatch(updateKakapo(oldName, newName))
+        dispatch(updateKakapo(id, newName))
         return null
       })
       .catch((err) => {

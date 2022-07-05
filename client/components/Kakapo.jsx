@@ -14,13 +14,14 @@ function Kakapo ({id, name, year}) {
   }
 
   return (
-    <>
+    <div className='kakapo'>
+      <img src='../images/kakapo.jpeg' alt='kakapo'/>
     <ul>
       <li>
-        {id}, {name}, {year} <UpdateKakapo id={id} name={name} hatchYear={year}/> <button onClick={handleDelete}>Delete</button>
+        {name}, {year} <UpdateKakapo id={id} name={name} hatchYear={year}/> <button onClick={handleDelete}>Delete</button>
       </li>
     </ul>
-    </>
+    </div>
   )
 }
 

@@ -5,6 +5,8 @@ import {useSelector, useDispatch} from 'react-redux'
 import {fetchKakapo} from '../actions'
 import AddKakapo from './AddKakapo'
 import Kakapo from './Kakapo'
+import Header from './Header'
+import Footer from './Footer'
 
 
 function App () {
@@ -21,9 +23,7 @@ function App () {
   
   return (
     <>
-      <header className="header">
-        <h1>My Collection</h1>
-      </header>
+    <Header/>
       <section className="main">
       {/* map through all kakapo in the data base and send info for each to Kakapo component as props */}
       {kakapo.map((k) => (
@@ -31,6 +31,7 @@ function App () {
         ))}   
         <AddKakapo/>  
       </section>
+      <Footer/>
     </>
   )
 }

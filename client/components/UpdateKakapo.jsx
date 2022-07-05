@@ -2,9 +2,9 @@ import React, {useState} from 'react'
 import {useDispatch} from 'react-redux'
 import {newNameKakapo} from '../actions'
 
-function UpdateKakapo({name}) {
+function UpdateKakapo({id}) {
   const [showUpdateForm, setShowUpdateForm] = useState(false)
-  const [newName, setNewName] = useState(name)
+  const [newName, setNewName] = useState('')
   const dispatch = useDispatch()
 
   function showForm(e){
@@ -13,8 +13,9 @@ function UpdateKakapo({name}) {
   }
 
   function handleSubmit(e) {
+    console.log('componenet:', id, newName)
     e.preventDefault()
-    dispatch(newNameKakapo(name, newName))
+    dispatch(newNameKakapo(id, newName))
     setNewName('')
   }
 
@@ -25,7 +26,7 @@ function UpdateKakapo({name}) {
   return (
     <>
     <button onClick={showForm}
-    >Update {name}</button>
+    >Update</button>
       {showUpdateForm && (
       <form onSubmit={handleSubmit}>
         <label htmlFor='updatedName'>Update name: </label>  
