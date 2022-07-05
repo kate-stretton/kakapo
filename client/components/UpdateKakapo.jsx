@@ -9,7 +9,7 @@ function UpdateKakapo({id, year}) {
 
   function showForm(e){
     e.preventDefault()
-    setShowUpdateForm(true)
+    setShowUpdateForm((prev) => !prev)
   }
 
   function handleSubmit(e) {
@@ -17,6 +17,7 @@ function UpdateKakapo({id, year}) {
     e.preventDefault()
     dispatch(newNameKakapo({id: id, name: newName, year: year}))
     setNewName('')
+    setShowUpdateForm((prev) => !prev)
   }
 
   function handleChange(e){
