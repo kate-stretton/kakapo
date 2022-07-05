@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import {useDispatch} from 'react-redux'
 import {newNameKakapo} from '../actions'
 
-function UpdateKakapo({id}) {
+function UpdateKakapo({id, year}) {
   const [showUpdateForm, setShowUpdateForm] = useState(false)
   const [newName, setNewName] = useState('')
   const dispatch = useDispatch()
@@ -13,9 +13,9 @@ function UpdateKakapo({id}) {
   }
 
   function handleSubmit(e) {
-    console.log('componenet:', id, newName)
+    console.log('component:', id, newName)
     e.preventDefault()
-    dispatch(newNameKakapo(id, newName))
+    dispatch(newNameKakapo({id: id, name: newName, year: year}))
     setNewName('')
   }
 

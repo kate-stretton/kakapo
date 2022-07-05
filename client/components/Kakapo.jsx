@@ -18,7 +18,7 @@ function Kakapo ({id, name, year}) {
       <img src='../images/kakapo.jpeg' alt='kakapo'/>
       <h4>Name: {name}</h4>
       <p>Hatch year: {year}</p>
- <UpdateKakapo id={id} name={name} hatchYear={year}/> <button onClick={handleDelete}>Delete</button>
+      <UpdateKakapo id={id} name={name} hatchYear={year}/> <button onClick={handleDelete}>Delete</button>
     </div>
   )
 }

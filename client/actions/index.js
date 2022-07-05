@@ -72,21 +72,18 @@ export function removeKakapo(id) {
   }
 }
 
-function updateKakapo(id, newName) {
+function updateKakapo(kakapo) {
   return {
     type: UPDATE_KAKAPO,
-    payload: {
-      id: id,
-      newName: newName,
-    },
+    payload: kakapo,
   }
 }
 
-export function newNameKakapo(id, kakapo) {
+export function newNameKakapo(kakapo) {
   return (dispatch) => {
-    return patchKakapo(id, kakapo) //patch! because we're talking to the api client
+    return patchKakapo(kakapo) //patch! because we're talking to the api client
       .then(() => {
-        dispatch(updateKakapo(id, kakapo))
+        dispatch(updateKakapo(kakapo))
       })
       .catch((err) => {
         console.log(err.message)
