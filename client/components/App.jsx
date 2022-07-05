@@ -26,10 +26,14 @@ function App () {
     <Header/>
       <section className="main">
       {/* map through all kakapo in the data base and send info for each to Kakapo component as props */}
+      <div className='kakapo-list'>
       {kakapo.map((k) => (
         <Kakapo key={k.id} id={k.id} name={k.name} year={k.hatchYear}/>
-        ))}   
-        <AddKakapo/>  
+        ))} 
+        </div>
+        <div className='add-form'>
+          <AddKakapo/>
+        </div>    
       </section>
       <Footer/>
     </>

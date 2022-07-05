@@ -41,8 +41,9 @@ router.delete('/:id', (req, res) => {
 })
 
 router.patch('/:id/', (req, res) => {
+  console.log('route:', req.body.name)
   return db
-    .updateKakapo(req.params.id, req.body.name)
+    .updateKakapo(req.params.id, req.body)
     .then(() => {
       return db.getAKakapo(req.params.id)
     })

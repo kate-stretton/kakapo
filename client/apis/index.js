@@ -24,7 +24,8 @@ export function farewellKakapo(id) {
   return request.delete(rootUrl + '/kakapo/' + id)
 }
 
-// sort this out
-export function newKakapo(id, newName) {
-  return request.patch(rootUrl + '/kakapo/' + id).send(newName)
+// sort this out (finish patchFruit)
+export function patchKakapo(kakapo) {
+  //return Promose.resole('yay') - automatically resoluve so we can check it works!
+  return request.patch(rootUrl + '/kakapo/' + kakapo.id).send(kakapo)
 }

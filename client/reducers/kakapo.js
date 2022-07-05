@@ -20,10 +20,10 @@ function kakapo(state = [], action) {
     // update for the kakako with the same id as payload
     case UPDATE_KAKAPO:
       return state.map((kakapo) => {
-        if (kakapo === action.payload.id) {
-          return action.payload.id
+        if (kakapo.id === action.payload.id) {
+          return { ...kakapo, ...action.payload }
         }
-        return kakapo
+        return kakapo //or else just return kakapo (when id doesn't match)
       })
     // or if no kakapo, no change to state
     default:

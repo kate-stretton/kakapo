@@ -1,4 +1,9 @@
-import { getKakapo, postKakapo, farewellKakapo, newKakapo } from '../apis/index'
+import {
+  getKakapo,
+  postKakapo,
+  farewellKakapo,
+  patchKakapo,
+} from '../apis/index'
 
 //largely for the purpose of avoiding typos
 export const SET_KAKAPO = 'SET_KAKAPO'
@@ -77,12 +82,11 @@ function updateKakapo(id, newName) {
   }
 }
 
-export function newNameKakapo(id, newName) {
+export function newNameKakapo(id, kakapo) {
   return (dispatch) => {
-    return newKakapo(id, newName)
+    return patchKakapo(id, kakapo) //patch! because we're talking to the api client
       .then(() => {
-        dispatch(updateKakapo(id, newName))
-        return null
+        dispatch(updateKakapo(id, kakapo))
       })
       .catch((err) => {
         console.log(err.message)

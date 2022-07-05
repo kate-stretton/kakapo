@@ -28,11 +28,12 @@ function UpdateKakapo({id}) {
     <button onClick={showForm}
     >Update</button>
       {showUpdateForm && (
+        <div className='form'>
       <form onSubmit={handleSubmit}>
         <label htmlFor='updatedName'>Update name: </label>  
         <input type='text' id ='updatedName' name='updatedName' value={newName.name} onChange={handleChange} />
         <button type='submit'>Update</button>
-    </form>)}
+    </form></div>)}
     </>
   )
 }
