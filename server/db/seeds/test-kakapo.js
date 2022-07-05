@@ -9,5 +9,7 @@ exports.seed = async function (knex) {
     { id: 3, name: 'Adelaide', hatchYear: 2016 },
     { id: 4, name: 'Kuia', hatchYear: 1991 },
     { id: 5, name: 'Sirocco', hatchYear: 1997 },
+    { id: 6, name: 'Quill', hatchYear: 2019 },
+    { id: 7, name: 'Āria', hatchYear: 2019 },
   ])
 }
