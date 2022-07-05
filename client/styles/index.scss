@@ -4,6 +4,7 @@ header{
   padding: 30px;
   font-size: 20px;
   margin-bottom: 40px;
+  border-radius: 10px;
 }
 
 footer{
@@ -12,7 +13,9 @@ footer{
   text-align: center;
   padding: 30px;
   font-size: 20px;
+  border-radius: 10px;
 }
+
 
 .main{
   width: 100%;
@@ -29,6 +32,10 @@ footer{
   border-radius: 5px;
   margin: 5px;
   text-align: center;
+  border-radius: 10px;
+  border: 2px solid;
+  padding: 50px;
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
 }
 
 .add-form{
@@ -57,4 +64,13 @@ input {
 
 img{
   height: 150px;
+}
+
+button{
+  background-color: rgb(95, 176, 95);
+  text-align: center;
+  border-radius: 10px;
+  padding: 9px 15px;
+  margin: 8px 0;
+  width: 100%
 }
