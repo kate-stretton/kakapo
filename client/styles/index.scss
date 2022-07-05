@@ -3,12 +3,14 @@ header{
   text-align: center;
   padding: 30px;
   font-size: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+  margin-top: 20px;
   border-radius: 10px;
 }
 
 footer{
-  margin-top: 40px;
+  margin-bottom: 20px;
+  margin-top: 20px;
   background-color: rgb(95, 176, 95);
   text-align: center;
   padding: 30px;
@@ -18,7 +20,6 @@ footer{
 
 
 .main{
-  width: 100%;
   margin: 10px;
   padding: 25px;
   display: flex;
@@ -39,10 +40,13 @@ footer{
 }
 
 .add-form{
+  padding: 50px;
   margin-top: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 10px;
+  border: 2px solid
 }
 
 input {
@@ -51,7 +55,6 @@ input {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-
 }
 
 .kakapo-list{
@@ -59,7 +62,7 @@ input {
   display: grid;
   align-items: center;
   grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 img{
@@ -74,3 +77,12 @@ button{
   margin: 8px 0;
   width: 100%
 }
+
+button:focus {
+  background: #e5e5e5;
+  outline: none;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+}
+
