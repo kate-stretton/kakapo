@@ -18,3 +18,5 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('app')
   )
 })
+
+export default store
