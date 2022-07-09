@@ -1,9 +1,8 @@
 const knex = require('knex')
-const { electron } = require('webpack')
 const testConfig = require('./knexfile').test
 const testDb = knex(testConfig)
 
-const { getKakapo, getAKakapo, deleteKakapo } = require('./db.js')
+const { getKakapo, getAKakapo, deleteKakapo, updateKakapo } = require('./db.js')
 
 beforeAll(() => {
   return testDb.migrate.latest()
@@ -57,15 +56,16 @@ describe('deleteKakapo', () => {
   })
 })
 
-// const mockUpdatedKakapo = {
-//   id: 1,
-//   name: 'Kate',
-//   hatchYear: 2016,
-// }
-// describe('updateKakapo', () => {
-//   it('updates name of kakapo', () => {
-//     return updateKakapo(mockUpdatedKakapo, testDb).then((kakapo) => {
-//       expect(kakapo.name).toContain('Kate')
-//     })
-//   })
-// })
+describe('updateKakapo', () => {
+  it('updates name of kakapo', () => {
+    return updateKakapo(5, { name: 'Kate' }, testDb)
+      .then(() => {
+        return getKakapo(testDb)
+      })
+      .then((kakapoArray) => {
+        expect.assertions(2)
+        expect(kakapoArray[4].name).toBe('Kate')
+        expect(kakapoArray[3].name).toBe('Kuia') //ie only replaced the name of one kakapo
+      })
+  })
+})
