@@ -24,7 +24,6 @@ function deleteKakapo(id, db = connection) {
 }
 
 function updateKakapo(id, kakapo, db = connection) {
-  console.log('db', kakapo)
   return db('kakapo').where({ id }).update(kakapo)
 }
 
