@@ -2,7 +2,7 @@ const knex = require('knex')
 const testConfig = require('./knexfile').test
 const testDb = knex(testConfig)
 
-const { getKakapo, getAKakapo } = require('./db.js')
+const { getKakapo, getAKakapo, deleteKakapo } = require('./db.js')
 
 beforeAll(() => {
   return testDb.migrate.latest()
@@ -36,14 +36,13 @@ describe('getAKakapo', () => {
   })
 })
 
-// describe('deleteKakapo', () => {
-//   it('deletes a kakapo from the database', () => {
-//     return deleteKakapo(1, testDb).then((kakapo) => {
-
-//       expect(kakapo).toHaveLength(6)
-//     })
-//   })
-// })
+describe('deleteKakapo', () => {
+  it('deletes kakapo from database', () => {
+    return deleteKakapo(2, testDb).then((deletedKakapo) => {
+      expect(deletedKakapo).toBe(1)
+    })
+  })
+})
 
 // describe('updateKakapo', () => {
 //   it('updates name of kakapo', () => {
@@ -53,9 +52,10 @@ describe('getAKakapo', () => {
 //       name: 'Adelaide',
 //       hatchYear: 2005,
 //     }
-//     return updateKakapo(2, updatedKakapo, testDb).then((kakapo) => {
-//       expect(kakapo.name).toBe('Adelaide')
-//       expect(kakapo.id).toBe(2)
-//     })
+//     return updateKakapo(updatedKakapo.id, updatedKakapo.name, testDb).then(
+//       (kakapo) => {
+//         expect(kakapo.name).toBe('Kate')
+//       }
+//     )
 //   })
 // })
