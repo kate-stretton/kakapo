@@ -1,4 +1,5 @@
 const knex = require('knex')
+const { electron } = require('webpack')
 const testConfig = require('./knexfile').test
 const testDb = knex(testConfig)
 
@@ -37,25 +38,34 @@ describe('getAKakapo', () => {
 })
 
 describe('deleteKakapo', () => {
-  it('deletes kakapo from database', () => {
+  it('deletes just one kakapo from database', () => {
     return deleteKakapo(2, testDb).then((deletedKakapo) => {
+      expect.assertions(1)
       expect(deletedKakapo).toBe(1)
     })
   })
+  it('deletes one kakapo with matching id', () => {
+    return deleteKakapo(2, testDb)
+      .then(() => {
+        return getKakapo(testDb)
+      })
+      .then((kakapoArray) => {
+        expect.assertions(2)
+        expect(kakapoArray).toHaveLength(6) //because there were 7 but i deleted one
+        expect(kakapoArray[1].id).not.toBe(2) //because we deleted the second kakapo
+      })
+  })
 })
 
+// const mockUpdatedKakapo = {
+//   id: 1,
+//   name: 'Kate',
+//   hatchYear: 2016,
+// }
 // describe('updateKakapo', () => {
 //   it('updates name of kakapo', () => {
-//     //expect.assertions(2)
-//     const updatedKakapo = {
-//       id: 2,
-//       name: 'Adelaide',
-//       hatchYear: 2005,
-//     }
-//     return updateKakapo(updatedKakapo.id, updatedKakapo.name, testDb).then(
-//       (kakapo) => {
-//         expect(kakapo.name).toBe('Kate')
-//       }
-//     )
+//     return updateKakapo(mockUpdatedKakapo, testDb).then((kakapo) => {
+//       expect(kakapo.name).toContain('Kate')
+//     })
 //   })
 // })
