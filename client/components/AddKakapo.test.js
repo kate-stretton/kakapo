@@ -13,12 +13,10 @@ describe('<AddKakapo/>', () => {
     render(<AddKakapo />)
     const input = screen.getByRole('textbox')
     fireEvent.change(input, { target: { value: 'Kate' } })
-
     const button = screen.getByRole('button')
     fireEvent.click(button)
-    expect(fakeDispatch).toHaveBeenCalledWith({
-      type: 'SET_KAKAPO',
-      payload: 'kakapo',
-    })
+    expect(fakeDispatch).toHaveBeenCalledTimes(1)
   })
 })
+
+//was dispatch called with the right action?
