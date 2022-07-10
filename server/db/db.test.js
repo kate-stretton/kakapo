@@ -46,7 +46,8 @@ describe('deleteKakapo', () => {
   it('deletes one kakapo with matching id', () => {
     return deleteKakapo(2, testDb)
       .then(() => {
-        return getKakapo(testDb)
+        // return getKakapo(testDb)
+        return testDb('kakapo').select()
       })
       .then((kakapoArray) => {
         expect.assertions(2)

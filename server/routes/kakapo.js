@@ -22,8 +22,7 @@ router.post('/', (req, res) => {
       res.json(id)
       return null
     })
-    .catch((err) => {
-      console.log(err)
+    .catch(() => {
       res.status(500).json({ message: 'Something went wrong' })
     })
 })
