@@ -27,14 +27,14 @@ export function fetchKakapo() {
 export function setKakapo(kakapo) {
   return {
     type: SET_KAKAPO,
-    kakapo,
+    payload: kakapo,
   }
 }
 
 export function addKakapo(kakapo) {
   return {
     type: ADD_KAKAPO,
-    kakapo,
+    payload: kakapo,
   }
 }
 

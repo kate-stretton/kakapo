@@ -6,14 +6,14 @@ import {
 } from '../actions'
 
 function kakapo(state = [], action) {
-  //const { type, payload } = action
-  switch (action.type) {
+  const { type, payload } = action
+  switch (type) {
     // receive all kakapo and them to state
     case SET_KAKAPO:
-      return action.kakapo
+      return payload
     // receive new kakapo and add it to state
     case ADD_KAKAPO:
-      return [...state, action.kakapo]
+      return [...state, payload]
     // delete by filtering out the kakapo in the payload
     case DELETE_KAKAPO:
       return state.filter((kakapo) => kakapo !== action.kakapo)
