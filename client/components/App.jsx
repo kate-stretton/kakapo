@@ -11,7 +11,18 @@ import Footer from './Footer'
 
 function App () {
   // Display the redux state
-  const kakapo=useSelector((state) => state.kakapo)
+  const kakapo = useSelector((state) => state.kakapo)
+  const sortedKakapo = kakapo.sort((a, b) => {
+    const nameA = a.name.toUpperCase()
+    const nameB = b.name.toUpperCase()
+    if (nameA < nameB){
+      return -1
+    }
+    if (nameA > nameB) {
+      return 1
+    }
+    return 0
+  })
   // need to define dispatch - dispatch the thunk when page loaders
   const dispatch = useDispatch()
 
@@ -27,7 +38,7 @@ function App () {
       <section className="main">
       {/* map through all kakapo in the data base and send info for each to Kakapo component as props */}
       <div className='kakapo-list'>
-      {kakapo.map((k) => (
+      {sortedKakapo.map((k) => (
         <Kakapo key={k.id} id={k.id} name={k.name} year={k.hatchYear}/>
         ))} 
         </div>
