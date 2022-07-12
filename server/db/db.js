@@ -14,8 +14,8 @@ function addKakapo(kakapo, db = connection) {
   const { name, hatchYear } = kakapo
   return db('kakapo')
     .insert({ name, hatchYear })
-    .then((ids) => {
-      return getAKakapo(ids[0])
+    .then((id) => {
+      return getAKakapo(id)
     })
 }
 
